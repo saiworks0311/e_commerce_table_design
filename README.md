@@ -71,7 +71,7 @@ Stores seller information and is connected to the `orders` table using `seller_i
 
 ## 📊 Database Schema
 
-![Database Schema](screenshots)
+![Database_Schema](Database_schema)
 
 ---
 

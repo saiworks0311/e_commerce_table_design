@@ -1,0 +1,235 @@
+sql> USE ecommerce;
+OK, 0 records retrieved in 0.7ms
+sql> SELECT * FROM customers LIMIT 0, 1001;
++-------------+-----------------+-------------------+------------+-------------+
+| customer_id | name            | email             | city       | signup_date |
++-------------+-----------------+-------------------+------------+-------------+
+|           1 | Amit Sharma     | amit@gmail.com    | Delhi      | 2025-01-01  |
+|           2 | Neha Verma      | neha@gmail.com    | Mumbai     | 2025-01-02  |
+|           3 | Rahul Khan      | rahul@gmail.com   | Bangalore  | 2025-01-03  |
+|           4 | Pooja Nair      | pooja@gmail.com   | Chennai    | 2025-01-04  |
+|           5 | Rohit Gupta     | rohit@gmail.com   | Delhi      | 2025-01-05  |
+|           6 | Ananya Roy      | ananya@gmail.com  | Kolkata    | 2025-01-06  |
+|           7 | Karan Mehta     | karan@gmail.com   | Ahmedabad  | 2025-01-07  |
+|           8 | Simran Kaur     | simran@gmail.com  | Chandigarh | 2025-01-08  |
+|           9 | Mohit Jain      | mohit@gmail.com   | Jaipur     | 2025-01-09  |
+|          10 | Sneha Patel     | sneha@gmail.com   | Surat      | 2025-01-10  |
+|          11 | Vikram Singh    | vikram@gmail.com  | Lucknow    | 2025-01-11  |
+|          12 | Alok Mishra     | alok@gmail.com    | Patna      | 2025-01-12  |
+|          13 | Nidhi Agarwal   | nidhi@gmail.com   | Noida      | 2025-01-13  |
+|          14 | Saurabh Verma   | saurabh@gmail.com | Ghaziabad  | 2025-01-14  |
+|          15 | Riya Sen        | riya@gmail.com    | Pune       | 2025-01-15  |
+|          16 | Aditya Malhotra | aditya@gmail.com  | Delhi      | 2025-01-16  |
+|          17 | Kritika Shah    | kritika@gmail.com | Mumbai     | 2025-01-17  |
+|          18 | Yash Tiwari     | yash@gmail.com    | Kanpur     | 2025-01-18  |
+|          19 | Mehul Joshi     | mehul@gmail.com   | Vadodara   | 2025-01-19  |
+|          20 | Isha Kapoor     | isha@gmail.com    | Gurgaon    | 2025-01-20  |
++-------------+-----------------+-------------------+------------+-------------+
+OK, 20 records retrieved in 0.674ms
+sql> SELECT * FROM order_items LIMIT 0, 1001;
++---------------+----------+------------+----------+
+| order_item_id | order_id | product_id | quantity |
++---------------+----------+------------+----------+
+|             1 |        1 |          1 |        1 |
+|             2 |        1 |          7 |        2 |
+|             3 |        2 |          3 |        1 |
+|             4 |        2 |          5 |        1 |
+|             5 |        3 |          8 |        1 |
+|             6 |        4 |          2 |        1 |
+|             7 |        5 |          6 |        3 |
+|             8 |        6 |          4 |        1 |
+|             9 |        7 |         10 |        1 |
+|            10 |        8 |         12 |        2 |
+|            11 |        9 |         15 |        3 |
+|            12 |       10 |          9 |        1 |
+|            13 |       11 |         11 |        1 |
+|            14 |       12 |         13 |        1 |
+|            15 |       13 |         14 |        2 |
+|            16 |       14 |         16 |        1 |
+|            17 |       15 |         17 |        1 |
+|            18 |       16 |         18 |        2 |
+|            19 |       17 |         19 |        1 |
+|            20 |       18 |         20 |        1 |
+|            21 |       19 |          1 |        1 |
+|            22 |       20 |          5 |        2 |
++---------------+----------+------------+----------+
+OK, 22 records retrieved in 1.694ms
+sql> SELECT * FROM orders LIMIT 0, 1001;
++----------+-------------+------------+--------------+
+| order_id | customer_id | order_date | order_status |
++----------+-------------+------------+--------------+
+|        1 |           1 | 2025-02-01 | Delivered    |
+|        2 |           2 | 2025-02-02 | Delivered    |
+|        3 |           3 | 2025-02-03 | Delivered    |
+|        4 |           4 | 2025-02-04 | Cancelled    |
+|        5 |           5 | 2025-02-05 | Delivered    |
+|        6 |           6 | 2025-02-06 | Pending      |
+|        7 |           7 | 2025-02-07 | Delivered    |
+|        8 |           8 | 2025-02-08 | Delivered    |
+|        9 |           9 | 2025-02-09 | Delivered    |
+|       10 |          10 | 2025-02-10 | Cancelled    |
+|       11 |          11 | 2025-02-11 | Delivered    |
+|       12 |          12 | 2025-02-12 | Delivered    |
+|       13 |          13 | 2025-02-13 | Pending      |
+|       14 |          14 | 2025-02-14 | Delivered    |
+|       15 |          15 | 2025-02-15 | Delivered    |
+|       16 |          16 | 2025-02-16 | Delivered    |
+|       17 |          17 | 2025-02-17 | Cancelled    |
+|       18 |          18 | 2025-02-18 | Delivered    |
+|       19 |          19 | 2025-02-19 | Delivered    |
+|       20 |          20 | 2025-02-20 | Delivered    |
++----------+-------------+------------+--------------+
+OK, 20 records retrieved in 0.689ms
+sql> SELECT * FROM payments LIMIT 0, 1001;
++------------+----------+--------------+---------+--------------+
+| payment_id | order_id | payment_mode | amount  | payment_date |
++------------+----------+--------------+---------+--------------+
+|          1 |        1 | UPI          | 2497.00 | 2025-02-01   |
+|          2 |        2 | Credit Card  | 1098.00 | 2025-02-02   |
+|          3 |        3 | UPI          | 1499.00 | 2025-02-03   |
+|          4 |        5 | Debit Card   |  897.00 | 2025-02-05   |
+|          5 |        7 | UPI          |  999.00 | 2025-02-07   |
+|          6 |        8 | Credit Card  | 3198.00 | 2025-02-08   |
+|          7 |        9 | UPI          |  747.00 | 2025-02-09   |
+|          8 |       11 | UPI          | 2099.00 | 2025-02-11   |
+|          9 |       12 | Debit Card   |  699.00 | 2025-02-12   |
+|         10 |       14 | UPI          |  899.00 | 2025-02-14   |
+|         11 |       15 | Credit Card  | 2199.00 | 2025-02-15   |
+|         12 |       16 | UPI          |  798.00 | 2025-02-16   |
+|         13 |       18 | Debit Card   |  599.00 | 2025-02-18   |
+|         14 |       19 | UPI          | 1999.00 | 2025-02-19   |
+|         15 |       20 | Credit Card  |  998.00 | 2025-02-20   |
++------------+----------+--------------+---------+--------------+
+OK, 15 records retrieved in 0.659ms
+sql> SELECT * FROM products LIMIT 0, 1001;
++------------+---------------------+-------------+---------+-------+
+| product_id | product_name        | category    | price   | stock |
++------------+---------------------+-------------+---------+-------+
+|          1 | Python Hoodie       | Clothing    | 1999.00 |    50 |
+|          2 | Java Hoodie         | Clothing    | 1899.00 |    40 |
+|          3 | Debugging Mug       | Accessories |  599.00 |   100 |
+|          4 | Code Like a Pro Mug | Accessories |  649.00 |    80 |
+|          5 | DSA Notebook        | Stationery  |  499.00 |   150 |
+|          6 | SQL Cheat Sheet     | Stationery  |  299.00 |   200 |
+|          7 | Sticker Pack        | Stationery  |  249.00 |   300 |
+|          8 | Algorithm T-Shirt   | Clothing    | 1499.00 |    60 |
+|          9 | GitHub Cap          | Accessories |  799.00 |    70 |
+|         10 | Keyboard Mat        | Accessories |  999.00 |    90 |
+|         11 | Linux Hoodie        | Clothing    | 2099.00 |    35 |
+|         12 | AI Nerd T-Shirt     | Clothing    | 1599.00 |    55 |
+|         13 | Whiteboard Notebook | Stationery  |  699.00 |   120 |
+|         14 | Bug Hunter Mug      | Accessories |  549.00 |   100 |
+|         15 | Terminal Stickers   | Stationery  |  199.00 |   250 |
+|         16 | Coder Bottle        | Accessories |  899.00 |   110 |
+|         17 | Late Night Hoodie   | Clothing    | 2199.00 |    30 |
+|         18 | Python Socks        | Accessories |  399.00 |   140 |
+|         19 | DSA Flash Cards     | Stationery  |  349.00 |   180 |
+|         20 | Clean Code Notebook | Stationery  |  599.00 |   130 |
++------------+---------------------+-------------+---------+-------+
+OK, 20 records retrieved in 0.687ms
+sql> -- total amount/revenue
+SELECT SUM(amount) AS total_revenue
+FROM payments LIMIT 0, 1001;
++---------------+
+| total_revenue |
++---------------+
+|      21225.00 |
++---------------+
+OK, 1 record retrieved in 0.624ms
+sql> SELECT p.product_name,
+       SUM(oi.quantity * p.price) AS revenue
+FROM order_items oi
+JOIN products p ON oi.product_id = p.product_id
+JOIN orders o ON oi.order_id = o.order_id
+WHERE o.order_status = 'Delivered'
+GROUP BY p.product_name
+ORDER BY revenue DESC LIMIT 0, 1001;
++---------------------+---------+
+| product_name        | revenue |
++---------------------+---------+
+| Python Hoodie       | 3998.00 |
+| AI Nerd T-Shirt     | 3198.00 |
+| Late Night Hoodie   | 2199.00 |
+| Linux Hoodie        | 2099.00 |
+| Algorithm T-Shirt   | 1499.00 |
+| DSA Notebook        | 1497.00 |
+| Keyboard Mat        |  999.00 |
+| Coder Bottle        |  899.00 |
+| SQL Cheat Sheet     |  897.00 |
+| Python Socks        |  798.00 |
+| Whiteboard Notebook |  699.00 |
+| Debugging Mug       |  599.00 |
+| Clean Code Notebook |  599.00 |
+| Terminal Stickers   |  597.00 |
+| Sticker Pack        |  498.00 |
++---------------------+---------+
+OK, 15 records retrieved in 1.188ms
+sql> SELECT c.name,
+       SUM(p.amount) AS total_spent
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN payments p ON o.order_id = p.order_id
+GROUP BY c.name
+ORDER BY total_spent DESC LIMIT 0, 1001;
++-----------------+-------------+
+| name            | total_spent |
++-----------------+-------------+
+| Simran Kaur     |     3198.00 |
+| Amit Sharma     |     2497.00 |
+| Riya Sen        |     2199.00 |
+| Vikram Singh    |     2099.00 |
+| Mehul Joshi     |     1999.00 |
+| Rahul Khan      |     1499.00 |
+| Neha Verma      |     1098.00 |
+| Karan Mehta     |      999.00 |
+| Isha Kapoor     |      998.00 |
+| Saurabh Verma   |      899.00 |
+| Rohit Gupta     |      897.00 |
+| Aditya Malhotra |      798.00 |
+| Mohit Jain      |      747.00 |
+| Alok Mishra     |      699.00 |
+| Yash Tiwari     |      599.00 |
++-----------------+-------------+
+OK, 15 records retrieved in 1.026ms
+sql> SELECT p.product_name,
+       SUM(oi.quantity) AS total_sold
+FROM order_items oi
+JOIN products p ON oi.product_id = p.product_id
+GROUP BY p.product_name
+ORDER BY total_sold DESC LIMIT 0, 1001;
++---------------------+------------+
+| product_name        | total_sold |
++---------------------+------------+
+| DSA Notebook        |          3 |
+| SQL Cheat Sheet     |          3 |
+| Terminal Stickers   |          3 |
+| Python Hoodie       |          2 |
+| Sticker Pack        |          2 |
+| AI Nerd T-Shirt     |          2 |
+| Bug Hunter Mug      |          2 |
+| Python Socks        |          2 |
+| Java Hoodie         |          1 |
+| Debugging Mug       |          1 |
+| Code Like a Pro Mug |          1 |
+| Algorithm T-Shirt   |          1 |
+| GitHub Cap          |          1 |
+| Keyboard Mat        |          1 |
+| Linux Hoodie        |          1 |
+| Whiteboard Notebook |          1 |
+| Coder Bottle        |          1 |
+| Late Night Hoodie   |          1 |
+| DSA Flash Cards     |          1 |
+| Clean Code Notebook |          1 |
++---------------------+------------+
+OK, 20 records retrieved in 1.366ms
+sql> SELECT COUNT(*) AS cancelled_orders
+FROM orders
+WHERE order_status = 'Cancelled' LIMIT 0, 1001;
++------------------+
+| cancelled_orders |
++------------------+
+|                3 |
++------------------+
+OK, 1 record retrieved in 0.725ms
+
+✓ SQL Script execution completed in 911ms. 11 statements executed successfully.
